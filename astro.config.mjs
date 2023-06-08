@@ -4,7 +4,7 @@ import { defineConfig } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "slurpapp.no",
+  site: "https://slurpapp.no",
   integrations: [
     tailwind(),
     image({

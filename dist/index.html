@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta name="generator" content="Astro v2.3.1">
+
+    <title>Astro Landing Page</title>
+    <meta name="description" content="Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.">
+
+    <!-- social media -->
+    <meta property="og:title" content="Slurp">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Build fast websites, faster. Astro is a new kind of site builder for the modern web. Lightning-fast performance meets powerful developer experience.">
+    <meta property="og:image" content="https://slurpapp.no/social.jpg">
+    <meta property="og:url" content="https://slurpapp.no/">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- initialize theme -->
+    <script>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  <link rel="stylesheet" href="/_astro/index.bfde677f.css" /><script type="module" src="/_astro/hoisted.0700d521.js"></script></head>
+  <body class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white">
+    <header id="page-header" class="absolute bottom-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white astro-HPNW4VWY">
+  <a class="flex items-center gap-3 hover:!text-default astro-HPNW4VWY" href="#">
+    <h1 class="sr-only astro-HPNW4VWY">Slurp</h1>
+    <svg fill-rule="evenodd" clip-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" viewBox="0 0 170 248" class="h-10 astro-HPNW4VWY" astro-icon="u"><path fill="#e55100" d="M-.5-.5h43v48c-.667 22.83-1 45.83-1 69-.138 25.034.362 50.034 1.5 75 2.5 6.5 7 11 13.5 13.5 18.333.667 36.667.667 55 0 7.908-2.242 12.741-7.409 14.5-15.5a3818.8 3818.8 0 0 0-.5-151v-39h44v209c-1.315 22.968-13.315 35.968-36 39h-98c-19.672-2.673-31.672-13.673-36-33V-.5Z" opacity=".985"/><path fill="#fedb96" d="M125.5 38.5a3818.8 3818.8 0 0 1 .5 151c-1.759 8.091-6.592 13.258-14.5 15.5a756.122 756.122 0 0 1-55 0c-6.5-2.5-11-7-13.5-13.5a1469.681 1469.681 0 0 1-1.5-75c0-23.17.333-46.17 1-69a73.613 73.613 0 0 0 18-1.5c6.98-3.633 13.98-7.3 21-11 15.045-3.901 29.712-2.735 44 3.5Z" opacity=".997"/><path fill="#fffdfa" d="M107.5 67.5c3.152-.541 5.652.459 7.5 3 .667 31 .667 62 0 93-2.706 3.478-5.706 3.811-9 1a2255.373 2255.373 0 0 1 0-95c.717-.544 1.217-1.21 1.5-2Z"/><path fill="#fffdfb" d="M107.5 178.5c2.544-.396 4.711.271 6.5 2 .667 3 .667 6 0 9-3.199 4.159-5.865 3.825-8-1-.847-3.572-.347-6.906 1.5-10Z"/></svg>
+
+  </a>
+  <div class="astro-HPNW4VWY">
+    <div class="flex items-center gap-6 astro-HPNW4VWY">
+      <nav class="hidden sm:block astro-HPNW4VWY">
+        <ul class="flex items-center gap-6 astro-HPNW4VWY">
+          <li class="astro-HPNW4VWY">
+                <a class="text-sm astro-HPNW4VWY" href="#features">
+                  Features
+                </a>
+              </li><li class="astro-HPNW4VWY">
+                <a class="text-sm astro-HPNW4VWY" href="#compatibility">
+                  Get in touch
+                </a>
+              </li>
+        </ul>
+      </nav>
+      <button id="open-nav-button" type="button" class="btn sm:hidden astro-HPNW4VWY" aria-label="Navigation">
+        <svg viewBox="0 0 24 24" class="h-8 astro-HPNW4VWY" astro-icon="mdi:menu"><path fill="currentColor" d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+      </button>
+      <!--
+  negative margin is sum of button width (8) and gap size of flex parent (6)
+  TODO don't hardcode these values
+--><button id="theme-switcher" type="button" class="-ml-14 origin-[right_center] scale-0 transition-all duration-500 astro-L4AEQEA3">
+  <div id="icon-theme-light" class="astro-L4AEQEA3">
+    <svg viewBox="0 0 512 512" class="h-8 astro-L4AEQEA3" astro-icon="theme/light"><defs><linearGradient id="astroicon:theme/lighta" x1="149.99" x2="234.01" y1="119.24" y2="264.76" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="currentColor"/><stop offset=".45" stop-color="currentColor"/><stop offset="1" stop-color="currentColor"/></linearGradient><symbol id="astroicon:theme/lightb" viewBox="0 0 384 384"><circle cx="192" cy="192" r="84" fill="url(#astroicon:theme/lighta)" stroke="currentColor" stroke-miterlimit="10" stroke-width="6"/><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="24" d="M192 61.66V12m0 360v-49.66m92.17-222.51 35.11-35.11M64.72 319.28l35.11-35.11m0-184.34L64.72 64.72m254.56 254.56-35.11-35.11M61.66 192H12m360 0h-49.66"><animateTransform additive="sum" attributeName="transform" dur="6s" repeatCount="indefinite" type="rotate" values="0 192 192; 45 192 192"/></path></symbol></defs><use xlink:href="#astroicon:theme/lightb" width="384" height="384" transform="translate(64 64)"/></svg>
+    <span class="sr-only astro-L4AEQEA3">Use light theme</span>
+  </div>
+  <div id="icon-theme-dark" class="hidden astro-L4AEQEA3">
+    <svg viewBox="0 0 512 512" class="h-8 astro-L4AEQEA3" astro-icon="theme/dark"><defs><linearGradient id="astroicon:theme/darkb" x1="54.33" x2="187.18" y1="29.03" y2="259.13" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="currentColor"/><stop offset=".45" stop-color="currentColor"/><stop offset="1" stop-color="currentColor"/></linearGradient><linearGradient id="astroicon:theme/darka" x1="294" x2="330" y1="112.82" y2="175.18" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="currentColor"/><stop offset=".45" stop-color="currentColor"/><stop offset="1" stop-color="currentColor"/></linearGradient><linearGradient xlink:href="#astroicon:theme/darka" id="astroicon:theme/darkc" x1="295.52" x2="316.48" y1="185.86" y2="222.14"/><linearGradient xlink:href="#astroicon:theme/darka" id="astroicon:theme/darkd" x1="356.29" x2="387.71" y1="194.78" y2="249.22"/><symbol id="astroicon:theme/darke" overflow="visible" viewBox="0 0 270 270"><path fill="url(#astroicon:theme/darkb)" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="6" d="M252.25 168.63C178.13 168.63 118 109.35 118 36.21A130.48 130.48 0 0 1 122.47 3C55.29 10.25 3 66.37 3 134.58 3 207.71 63.09 267 137.21 267 199.69 267 252 224.82 267 167.79a135.56 135.56 0 0 1-14.75.84Z"><animateTransform additive="sum" attributeName="transform" dur="6s" repeatCount="indefinite" type="rotate" values="-15 135 135; 9 135 135; -15 135 135"/></path></symbol></defs><path fill="url(#astroicon:theme/darka)" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m282.83 162.84 24.93-6.42a1.78 1.78 0 0 1 1.71.46l18.37 18a1.8 1.8 0 0 0 3-1.73l-6.42-24.93a1.78 1.78 0 0 1 .46-1.71l18-18.37a1.8 1.8 0 0 0-1.73-3l-24.93 6.42a1.78 1.78 0 0 1-1.71-.46l-18.37-18a1.8 1.8 0 0 0-3 1.73l6.42 24.93a1.78 1.78 0 0 1-.46 1.71l-18 18.37a1.8 1.8 0 0 0 1.73 3Z"><animateTransform additive="sum" attributeName="transform" calcMode="spline" dur="6s" keySplines=".42, 0, .58, 1; .42, 0, .58, 1" repeatCount="indefinite" type="rotate" values="-15 312 144; 15 312 144; -15 312 144"/><animate attributeName="opacity" dur="6s" values="1; .75; 1; .75; 1; .75; 1"/></path><path fill="url(#astroicon:theme/darkc)" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m285.4 193.44 12 12.25a1.19 1.19 0 0 1 .3 1.14l-4.28 16.62a1.2 1.2 0 0 0 2 1.15l12.25-12a1.19 1.19 0 0 1 1.14-.3l16.62 4.28a1.2 1.2 0 0 0 1.15-2l-12-12.25a1.19 1.19 0 0 1-.3-1.14l4.28-16.62a1.2 1.2 0 0 0-2-1.15l-12.25 12a1.19 1.19 0 0 1-1.14.3l-16.62-4.28a1.2 1.2 0 0 0-1.15 2Z"><animateTransform additive="sum" attributeName="transform" begin="-.33s" calcMode="spline" dur="6s" keySplines=".42, 0, .58, 1; .42, 0, .58, 1" repeatCount="indefinite" type="rotate" values="-15 306 204; 15 306 204; -15 306 204"/><animate attributeName="opacity" begin="-.33s" dur="6s" values="1; .75; 1; .75; 1; .75; 1"/></path><path fill="url(#astroicon:theme/darkd)" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m337.32 223.73 24.8 6.9a1.83 1.83 0 0 1 1.25 1.25l6.9 24.8a1.79 1.79 0 0 0 3.46 0l6.9-24.8a1.83 1.83 0 0 1 1.25-1.25l24.8-6.9a1.79 1.79 0 0 0 0-3.46l-24.8-6.9a1.83 1.83 0 0 1-1.25-1.25l-6.9-24.8a1.79 1.79 0 0 0-3.46 0l-6.9 24.8a1.83 1.83 0 0 1-1.25 1.25l-24.8 6.9a1.79 1.79 0 0 0 0 3.46Z"><animateTransform additive="sum" attributeName="transform" begin="-.67s" calcMode="spline" dur="6s" keySplines=".42, 0, .58, 1; .42, 0, .58, 1" repeatCount="indefinite" type="rotate" values="-15 372 222; 15 372 222; -15 372 222"/><animate attributeName="opacity" begin="-.67s" dur="6s" values="1; .75; 1; .75; 1; .75; 1"/></path><use xlink:href="#astroicon:theme/darke" width="270" height="270" transform="translate(121 121)"/></svg>
+    <span class="sr-only astro-L4AEQEA3">Use dark theme</span>
+  </div>
+</button>
+    </div>
+    <div id="menu-modal" class="modal hidden astro-HPNW4VWY" aria-hidden="true">
+      <div class="fixed inset-0 bg-default px-8 py-4 text-default astro-HPNW4VWY">
+        <div class="space-y-4 astro-HPNW4VWY" role="dialog" aria-modal="true">
+          <header class="text-right astro-HPNW4VWY">
+            <button id="close-nav-button" type="button" class="btn astro-HPNW4VWY" aria-label="Close navigation">
+              <svg viewBox="0 0 24 24" class="h-8 astro-HPNW4VWY" astro-icon="mdi:close"><path fill="currentColor" d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+            </button>
+          </header>
+          <div class="flex justify-center astro-HPNW4VWY">
+            <svg fill="none" viewBox="0 0 627 894" class="h-16 astro-HPNW4VWY" astro-icon="logomark"><path fill="currentColor" fill-rule="evenodd" d="M445.433 22.983c7.289 9.05 11.006 21.26 18.44 45.682l162.408 533.511a675.855 675.855 0 0 0-194.166-65.737l-105.744-357.34a13.763 13.763 0 0 0-26.408.041L195.5 536.259A675.821 675.821 0 0 0 .46 602.095L163.663 68.541c7.457-24.38 11.186-36.57 18.476-45.602A59.994 59.994 0 0 1 206.454 4.95C217.224.622 229.971.622 255.466.622h116.568c25.528 0 38.292 0 49.072 4.338a60.004 60.004 0 0 1 24.327 18.023Z" clip-rule="evenodd"/><path fill="#FF5D01" fill-rule="evenodd" d="M464.867 627.566c-26.773 22.894-80.212 38.507-141.766 38.507-75.55 0-138.872-23.52-155.675-55.152-6.007 18.129-7.354 38.877-7.354 52.131 0 0-3.958 65.082 41.308 110.349 0-23.505 19.055-42.559 42.559-42.559 40.287 0 40.242 35.148 40.205 63.664l-.002 2.545c0 43.282 26.453 80.385 64.073 96.024-5.619-11.557-8.771-24.535-8.771-38.25 0-41.28 24.235-56.65 52.401-74.514 22.41-14.213 47.31-30.004 64.47-61.682 8.953-16.528 14.037-35.459 14.037-55.577 0-12.372-1.922-24.295-5.485-35.486Z" clip-rule="evenodd"/></svg>
+          </div>
+          <nav class="astro-HPNW4VWY">
+            <ul class="flex flex-col astro-HPNW4VWY">
+              <li class="astro-HPNW4VWY">
+                    <a class="block py-4 text-center text-xl astro-HPNW4VWY" href="#features">
+                      Features
+                    </a>
+                  </li><li class="astro-HPNW4VWY">
+                    <a class="block py-4 text-center text-xl astro-HPNW4VWY" href="#compatibility">
+                      Get in touch
+                    </a>
+                  </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+
+<noscript>
+  <style>
+    #open-nav-button {
+      display: none;
+    }
+  </style>
+</noscript>
+    <section class="relative h-full bg-black astro-3EGMGWTG">
+  <div id="starfield" class="absolute inset-0">
+  <canvas id="starfield-canvas"></canvas>
+</div>
+  <!-- <GitHubCorner /> -->
+  <div id="splash-bg-fallback" class="absolute inset-0 hidden opacity-40 astro-3EGMGWTG">
+    <picture>
+	<source type="image/avif" srcset="/_astro/moon.e37745fc_Z1yMVJY.avif 450w,/_astro/moon.e37745fc_Z1DFhPq.avif 800w,/_astro/moon.e37745fc_yW6JM.avif 1200w" sizes="100vw"><source type="image/webp" srcset="/_astro/moon.e37745fc_ZLGAIe.webp 450w,/_astro/moon.e37745fc_ZQyVNF.webp 800w,/_astro/moon.e37745fc_1m3rLx.webp 1200w" sizes="100vw"><source type="image/jpeg" srcset="/_astro/moon.e37745fc_Z148XWe.jpg 450w,/_astro/moon.e37745fc_1dLTv3.jpg 800w,/_astro/moon.e37745fc_ZaSIDl.jpg 1200w" sizes="100vw">
+	<img alt="The ridged surface of the moon" src="/_astro/moon.e37745fc_ZaSIDl.jpg" loading="lazy" decoding="async" class="h-full w-full object-cover">
+</picture>
+  </div>
+  <div class="flex h-full astro-3EGMGWTG">
+      <div class="relative container h-full m-auto astro-3EGMGWTG">  
+        <!-- "relative m-auto gradient-text text-center font-extrabold tracking-tighter text-8xl" -->
+      
+        <div class="relative letter p-1 gradient-text text-right font-extrabold tracking-tighter text-9xl astro-3EGMGWTG">
+          SL</div>
+        
+        <div class="relative letter  astro-3EGMGWTG"><picture>
+	<source type="image/avif" srcset="/_astro/u.f32be4c0_ZxMFrI.avif 40w,/_astro/u.f32be4c0_Z1mXiR6.avif 20w" sizes="(min-width: 20) 6vw, 6vw"><source type="image/webp" srcset="/_astro/u.f32be4c0_eiEz2.webp 40w,/_astro/u.f32be4c0_ZzQWPl.webp 20w" sizes="(min-width: 20) 6vw, 6vw"><source type="image/png" srcset="/_astro/u.f32be4c0_Z1UN8tN.png 40w,/_astro/u.f32be4c0_19Gz1W.png 20w" sizes="(min-width: 20) 6vw, 6vw">
+	<img alt="u" src="/_astro/u.f32be4c0_Z1UN8tN.png" loading="eager" decoding="async" class="relative place-items-center astro-3EGMGWTG">
+</picture></div>
+          <div class="relative letter gradient-text pr-1 text-left font-extrabold tracking-tighter text-9xl astro-3EGMGWTG">RP</div>
+        
+  </div>
+<!--     <div
+      id="astronaut"
+      class="w-2/3 max-w-3xl self-start sm:w-10/12 sm:self-auto sm:justify-self-start"
+    >
+      <Picture
+        class="h-full w-full object-cover"
+        src={astronautImage}
+        widths={widths}
+        sizes={sizes}
+        loading="eager"
+        alt="A floating astronaut in a space suit"
+      />
+    </div>
+  </div> -->
+</div></section>
+
+<noscript>
+  <style>
+    #splash-bg-fallback {
+      display: block;
+    }
+  </style>
+</noscript>
+    <div class="space-y-24 px-8 py-32">
+      <section id="intro" class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8">
+  <div class="flex flex-col items-center gap-4">
+    <svg data-name="Layer 1" viewBox="0 0 813.689 551.128" slot="eyebrow" class="h-32" astro-icon="beer"><path fill="#f0f0f0" d="M298.536 529.02c-32.504-14.962-59.183-46.53-59.941-82.304a164.863 164.863 0 0 0 107.877 34.27c14.99-.698 31.591-3.033 43.629 5.927 7.49 5.576 11.67 14.722 13.173 23.937 1.503 9.216.622 18.635-.262 27.93l.872 2.162c-35.57 3.902-72.844 3.04-105.348-11.922Z"/><path fill="#fff" d="M239.336 446.6A140.913 140.913 0 0 0 304.31 504a60.682 60.682 0 0 0 18.317 5.096 34.804 34.804 0 0 0 18.006-3.36c5.267-2.421 10.374-5.507 16.138-6.605a21.31 21.31 0 0 1 16.895 4.276c5.991 4.49 10.011 10.865 13.726 17.235 4.125 7.073 8.297 14.485 15.263 19.148.844.565-.082 1.842-.924 1.277-12.12-8.112-15.586-23.48-25.646-33.482-4.694-4.666-10.823-7.946-17.605-7.125-5.93.719-11.2 3.896-16.51 6.393a37.138 37.138 0 0 1-17.484 3.942 56.1 56.1 0 0 1-18.446-4.372 136.711 136.711 0 0 1-36.571-22.097 143.412 143.412 0 0 1-31.576-37.091c-.515-.871.931-1.502 1.443-.637Z"/><path fill="#fff" d="M295.343 500.707a21.141 21.141 0 0 1-25.98 8.63c-.94-.383-.389-1.86.552-1.477a19.577 19.577 0 0 0 24.15-8.078c.523-.87 1.798.06 1.278.925ZM338.125 507.315a40.748 40.748 0 0 0-16.856-24.45c-.842-.567.084-1.844.925-1.277a42.385 42.385 0 0 1 17.488 25.477c.23.99-1.33 1.235-1.557.25ZM258.773 472.912a11.967 11.967 0 0 0 2.885-10.982c-.242-.988 1.317-1.23 1.557-.25a13.41 13.41 0 0 1-3.165 12.157.815.815 0 0 1-1.101.176.793.793 0 0 1-.176-1.1Z"/><path fill="#f0f0f0" d="M330.299 367.545c.168.612.337 1.224.518 1.841a157.6 157.6 0 0 0 8.891 23.97c.27.602.552 1.208.838 1.802a166.146 166.146 0 0 0 36.148 49.347 161.349 161.349 0 0 0 19.116 15.347c9.326 6.385 19.945 12.566 26.426 21.399a27.68 27.68 0 0 1 1.884 2.861l-17.667 55.6c-.103.105-.194.216-.298.323l-.604 2.252c-.365-.214-.739-.444-1.104-.658-.212-.123-.42-.26-.632-.382-.14-.087-.28-.173-.412-.243a2.21 2.21 0 0 1-.128-.082c-.131-.07-.246-.149-.364-.214q-3.14-1.92-6.264-3.89c-.013-.004-.013-.004-.022-.02-15.842-10.048-30.985-21.507-43.908-34.9-.388-.404-.79-.81-1.17-1.239a153.961 153.961 0 0 1-15.804-19.532 136.108 136.108 0 0 1-7.137-11.778 113.184 113.184 0 0 1-11.643-33.419c-4.192-23.286-.89-47.655 12.312-66.922.338-.493.673-.974 1.024-1.463Z"/><path fill="#fff" d="M330.965 367.895a140.913 140.913 0 0 0 17.318 84.95 60.682 60.682 0 0 0 11.557 15.097 34.804 34.804 0 0 0 16.4 8.158c5.663 1.238 11.598 1.85 16.86 4.443a21.31 21.31 0 0 1 10.917 13.586c2.08 7.192 1.452 14.702.583 22.025-.965 8.13-2.097 16.56.658 24.478.334.96-1.174 1.421-1.508.463-4.792-13.774 1.694-28.132-.317-42.174-.939-6.552-3.858-12.861-9.767-16.288-5.168-2.997-11.288-3.632-17.032-4.837a37.138 37.138 0 0 1-16.333-7.378 56.099 56.099 0 0 1-12.095-14.597 136.711 136.711 0 0 1-15.897-39.661 143.412 143.412 0 0 1-2.88-48.626c.113-1.006 1.648-.639 1.536.36Z"/><path fill="#fff" d="M343.107 444.816a21.141 21.141 0 0 1-25.94-8.75c-.52-.872.81-1.72 1.33-.848a19.577 19.577 0 0 0 24.146 8.09c.941-.38 1.4 1.13.463 1.508ZM373.287 475.85a40.748 40.748 0 0 0 1.261-29.67c-.33-.96 1.178-1.422 1.508-.463a42.385 42.385 0 0 1-1.376 30.871c-.413.93-1.804.186-1.393-.738ZM330.641 400.606a11.967 11.967 0 0 0 8.917-7.032c.4-.934 1.792-.19 1.393.738a13.41 13.41 0 0 1-9.847 7.801.815.815 0 0 1-.985-.522.793.793 0 0 1 .522-.985Z"/><path fill="#f0f0f0" d="M752.96 526.358a73.187 73.187 0 0 1-13.02 18.79q-1.786 1.86-3.67 3.6c-.87.81-1.76 1.6-2.67 2.38h-61.59c.05-.8.14-1.59.26-2.38a19.627 19.627 0 0 1 2.63-7.22c5.12-8.24 15.65-10.77 24.83-13.9 2.19-.75 4.36-1.57 6.49-2.47 2.75-1.15 5.45-2.42 8.08-3.8a107.372 107.372 0 0 0 31.03-24.48c.28-.32.55-.64.82-.97a102.018 102.018 0 0 0 9.69-13.41c.22-.34.42-.69.63-1.04.13.36.26.73.39 1.09 4.9 14.29 2.74 30.04-3.9 43.81Z"/><path fill="#fff" d="M757.02 481.598c-.05.32-.1.64-.16.95a92.075 92.075 0 0 1-5.85 20.12 93.102 93.102 0 0 1-4.19 8.72 91.993 91.993 0 0 1-10.61 15.49c-.22.26-.45.52-.67.78q-2.61 2.985-5.47 5.68a36.396 36.396 0 0 1-10.05 7 22.873 22.873 0 0 1-9.58 1.84c-.62 0-1.24-.03-1.87-.07-2.52-.16-5.1-.5-7.64-.43a16.31 16.31 0 0 0-3.8.5 13.137 13.137 0 0 0-7.95 6.57 18.58 18.58 0 0 0-.95 1.89c-.07.16-.14.33-.2.49h-1.1a21.167 21.167 0 0 1 1.08-2.38c.21-.41.44-.81.68-1.2a13.79 13.79 0 0 1 9.15-6.57 18.74 18.74 0 0 1 3.5-.31c2.59-.04 5.19.32 7.77.46.27.01.54.03.81.03.34.01.69.01 1.03.01a21.937 21.937 0 0 0 9.78-2.29 39.558 39.558 0 0 0 9.81-7.4c1.55-1.53 3.04-3.13 4.46-4.78.07-.07.13-.14.19-.21a90.119 90.119 0 0 0 14.68-23.71c.14-.31.27-.62.4-.93a91.458 91.458 0 0 0 5.57-19.35c.06-.31.11-.63.16-.94.1-.64 1.12-.6 1.02.04Z"/><path fill="#fff" d="M735.146 527.367a13.664 13.664 0 0 0 17.667-.967c.474-.453-.207-1.211-.682-.758a12.652 12.652 0 0 1-16.436.866c-.52-.399-1.066.462-.549.86ZM710.989 541.478a26.336 26.336 0 0 1 4.341-18.695c.372-.54-.488-1.089-.859-.549a27.393 27.393 0 0 0-4.478 19.463c.097.65 1.092.428.996-.219ZM750.55 501.989a7.734 7.734 0 0 1-4.338-5.92c-.089-.651-1.084-.428-.996.219a8.667 8.667 0 0 0 4.784 6.56.527.527 0 0 0 .704-.156.512.512 0 0 0-.155-.703Z"/><path fill="#f0f0f0" d="M707.72 516.398c-.36 2.96-.86 5.87-1.5 8.76v.01a99.406 99.406 0 0 1-4.88 15.49v.01c-.13.35-.27.68-.41 1.01a124.487 124.487 0 0 1-4.4 9.45H656.4l-1.94-2.38-.68-.84a17.748 17.748 0 0 1 .46-2.17c1.8-6.85 6.72-13.08 10.82-19.13a103.893 103.893 0 0 0 7.85-13.76 107.23 107.23 0 0 0 10.05-38.23c.03-.43.05-.86.07-1.29a102.404 102.404 0 0 0-.33-16.52v-.02c-.04-.4-.08-.81-.13-1.21.32.22.64.42.95.63a.01.01 0 0 1 .01.01h.01c12.47 8.44 20.23 22.27 23.24 37.23.01.03.01.06.02.09a73.48 73.48 0 0 1 .92 22.86Z"/><path fill="#fff" d="M693.74 504.058c-.02.34-.04.67-.07 1.01a82.2 82.2 0 0 1-.94 7.84 36.447 36.447 0 0 1-3.82 11.64 22.8 22.8 0 0 1-6.54 7.23q-.75.57-1.53 1.08c-3.17 2.08-6.7 3.92-9.1 6.94a12.678 12.678 0 0 0-2.5 8.95 17.462 17.462 0 0 0 .32 2.38h-1.03a18.565 18.565 0 0 1-.29-1.96l-.03-.42a13.705 13.705 0 0 1 3.38-10.34c2.55-2.81 5.97-4.58 9.08-6.67.23-.15.45-.31.67-.47.28-.19.56-.4.83-.61a21.608 21.608 0 0 0 6.43-7.71 39.175 39.175 0 0 0 3.37-11.81q.465-3.24.7-6.5c0-.1.01-.19.01-.29v-.01a90.79 90.79 0 0 0-2.53-27.76c-.09-.33-.18-.65-.26-.98a91.116 91.116 0 0 0-7.19-18.79v-.02c-.15-.28-.29-.56-.44-.84-.31-.57.53-1.16.83-.58.15.28.29.56.43.84a.01.01 0 0 1 .01.01 91.41 91.41 0 0 1 7.48 19.73 89.185 89.185 0 0 1 1.87 9.34 91.964 91.964 0 0 1 .86 18.77Z"/><path fill="#fff" d="M693.183 505.08a13.664 13.664 0 0 0 13.523-11.41c.106-.646-.894-.841-1-.193a12.652 12.652 0 0 1-12.602 10.586c-.656-.005-.573 1.011.079 1.016ZM682.39 530.891a26.336 26.336 0 0 1-7.79-17.54c-.028-.656-1.045-.577-1.016.078a27.393 27.393 0 0 0 8.143 18.236c.469.461 1.129-.315.663-.774ZM690.201 475.543a7.734 7.734 0 0 1-7.027-2.116c-.463-.466-1.123.311-.663.775a8.667 8.667 0 0 0 7.769 2.357.527.527 0 0 0 .469-.548.512.512 0 0 0-.548-.468Z"/><path fill="#f0f0f0" d="M4.174 117.558c.97-35.769 19.498-72.715 52.09-87.484a164.863 164.863 0 0 0 10.928 112.66c6.538 13.509 15.215 27.853 11.712 42.445-2.18 9.08-8.944 16.52-16.825 21.527-7.883 5.006-16.888 7.901-25.782 10.745l-1.645 1.652C17.074 187.936 3.205 153.328 4.174 117.558Z"/><path fill="#fff" d="M56.663 30.71a140.913 140.913 0 0 0-27.216 82.316 60.682 60.682 0 0 0 2.52 18.845 34.804 34.804 0 0 0 10.173 15.232c4.297 3.89 9.143 7.372 12.42 12.239a21.31 21.31 0 0 1 2.714 17.215c-1.771 7.274-6.05 13.478-10.446 19.4-4.88 6.574-10.054 13.325-11.6 21.564-.188.998-1.726.65-1.539-.348 2.692-14.334 15.458-23.565 20.695-36.748 2.444-6.152 3.049-13.077-.374-18.989-2.993-5.17-7.987-8.764-12.372-12.665a37.138 37.138 0 0 1-10.502-14.523 56.1 56.1 0 0 1-3.235-18.68 136.711 136.711 0 0 1 5.93-42.314 143.412 143.412 0 0 1 21.68-43.62c.598-.817 1.747.265 1.152 1.076Z"/><path fill="#fff" d="M28.949 103.486a21.141 21.141 0 0 1-18.154-20.491c-.018-1.015 1.558-1.09 1.575-.074a19.577 19.577 0 0 0 16.927 19.026c1.005.139.651 1.676-.348 1.538ZM39.702 145.418a40.748 40.748 0 0 0 15.848-25.115c.19-.997 1.729-.648 1.538.348a42.385 42.385 0 0 1-16.544 26.1c-.82.6-1.658-.736-.842-1.333ZM40.117 58.93a11.967 11.967 0 0 0 11.233-1.667c.812-.611 1.649.727.842 1.333a13.41 13.41 0 0 1-12.422 1.872.815.815 0 0 1-.596-.943.793.793 0 0 1 .943-.595Z"/><path fill="#f0f0f0" d="M165.125 83.243c-.496.396-.992.791-1.488 1.2a157.6 157.6 0 0 0-18.54 17.604 69.26 69.26 0 0 0-1.327 1.479 166.145 166.145 0 0 0-31.15 52.644 161.348 161.348 0 0 0-6.59 23.613c-2.203 11.085-3.708 23.28-9.28 32.712a27.682 27.682 0 0 1-1.89 2.858l-58.065 5.628c-.138-.053-.276-.093-.415-.147l-2.308.33c.053-.419.117-.853.17-1.273.03-.243.073-.488.103-.732.024-.162.05-.325.061-.474a2.21 2.21 0 0 1 .026-.15c.012-.147.04-.284.053-.419a464.05 464.05 0 0 1 1.112-7.289c-.001-.013-.001-.013.01-.027 3.007-18.518 7.585-36.948 14.816-54.097.217-.516.433-1.045.677-1.563a153.964 153.964 0 0 1 11.742-22.213 136.111 136.111 0 0 1 8.021-11.195 113.184 113.184 0 0 1 26.145-23.85c19.76-13.014 43.463-19.564 66.37-15.005.587.117 1.16.236 1.747.366Z"/><path fill="#fff" d="M165.066 83.993a140.913 140.913 0 0 0-71.29 49.338 60.682 60.682 0 0 0-9.334 16.564 34.804 34.804 0 0 0-1.048 18.287c1.088 5.693 2.861 11.39 2.547 17.249a21.31 21.31 0 0 1-8.197 15.38c-5.794 4.741-12.946 7.118-20.02 9.2-7.855 2.31-16.05 4.587-22.246 10.234-.75.684-1.768-.521-1.019-1.204 10.779-9.825 26.53-9.51 38.65-16.882 5.654-3.44 10.306-8.605 11.132-15.387.723-5.93-1.1-11.806-2.252-17.56a37.138 37.138 0 0 1 .358-17.92 56.1 56.1 0 0 1 8.663-16.862 136.71 136.71 0 0 1 30.211-30.215 143.412 143.412 0 0 1 43.573-21.776c.97-.292 1.235 1.264.272 1.554Z"/><path fill="#fff" d="M99.122 125.413a21.141 21.141 0 0 1-2.158-27.29c.596-.821 1.9.068 1.302.89a19.577 19.577 0 0 0 2.06 25.382c.72.715-.489 1.73-1.204 1.018ZM82.462 165.368a40.748 40.748 0 0 0 27.774-10.511c.753-.681 1.77.523 1.018 1.204a42.385 42.385 0 0 1-28.923 10.879c-1.017-.015-.88-1.586.13-1.572ZM134.865 96.563a11.967 11.967 0 0 0 9.972 5.431c1.016.001.88 1.573-.13 1.572a13.41 13.41 0 0 1-11.046-5.985.815.815 0 0 1 .093-1.11.792.792 0 0 1 1.111.092ZM577.591 549.155H411.583a35.036 35.036 0 0 1-34.996-34.996V258.152a35.036 35.036 0 0 1 34.996-34.997h166.008a35.036 35.036 0 0 1 34.996 34.997v256.007a35.036 35.036 0 0 1-34.996 34.996Z"/><path fill="#f9a826" d="M559.591 523.733H429.583a34.535 34.535 0 0 1-34.496-34.496V283.075a34.535 34.535 0 0 1 34.496-34.496h130.008a34.535 34.535 0 0 1 34.496 34.496v206.162a34.535 34.535 0 0 1-34.496 34.496Z"/><path fill="#3f3d56" d="M378.06 448.699h234v54h-234z"/><path fill="#fff" d="M46.304 319.075 6.68 268.13a31.728 31.728 0 0 1 5.566-44.527l160.49-124.826a60.595 60.595 0 0 1 32.602-12.618l13.536-1.048 116.554-68.269A9.996 9.996 0 0 1 352.406 6.54l33.153 42.625a9.997 9.997 0 0 1-14.218 13.879l-95.343 95.342a60.348 60.348 0 0 1-22.94 40.077L90.83 324.64a31.728 31.728 0 0 1-44.526-5.565Z"/><path fill="#3f3d56" d="M577.591 549.155H411.583a35.036 35.036 0 0 1-34.996-34.996V258.152a35.036 35.036 0 0 1 34.996-34.997h166.008a35.036 35.036 0 0 1 34.996 34.997v256.007a35.036 35.036 0 0 1-34.996 34.996Zm-166.008-324a33.033 33.033 0 0 0-32.996 32.997v256.007a33.033 33.033 0 0 0 32.996 32.996h166.008a33.033 33.033 0 0 0 32.996-32.996V258.152a33.033 33.033 0 0 0-32.996-32.997Z"/><path fill="#f9a826" d="M381.834 12.19a60.149 60.149 0 0 1 55.51 5.233c16.75 10.753 29.228 30.126 33.396 51.846 2.043 10.645 2.782 23.026 10.229 29.653 5.454 4.853 12.88 4.98 19.444 7.326 19.411 6.94 29.429 33.877 26.602 57.271s-15.414 43.542-28.923 61.18c4.295-9.478-1.282-21.77-9.44-26.744s-17.88-4.556-27.063-3.733-18.753 1.866-27.316-2.08c-14.632-6.74-22.04-26.275-23.144-44.538s2.546-36.465 2.808-54.77-3.803-38.36-16.447-49.262c-5.815-5.014-13.01-7.688-18.42-13.283s-8.312-16.214-3.257-22.241"/><path fill="#f0f0f0" d="M585.06 214.699c-.524 0-1.043.019-1.56.048a27.007 27.007 0 0 0-37.03-33.438c-4.327-12.182-13.63-20.61-24.41-20.61s-20.084 8.428-24.412 20.61a27.036 27.036 0 0 0-23.177 0c-4.328-12.182-13.63-20.61-24.411-20.61s-20.084 8.428-24.412 20.61a27.006 27.006 0 0 0-37.024 33.454c-.518-.039-1.04-.064-1.564-.064-14.912 0-27 16.118-27 36s12.088 36 27 36c12.28 0 22.64-10.937 25.915-25.901a27.012 27.012 0 0 0 30.673 5.291c4.328 12.182 13.63 20.61 24.412 20.61 12.28 0 22.64-10.937 25.915-25.901a27.012 27.012 0 0 0 30.673 5.291c4.328 12.182 13.63 20.61 24.412 20.61s20.083-8.428 24.41-20.61a27.002 27.002 0 1 0 11.59-51.39Z"/><circle cx="441.06" cy="286.699" r="5" fill="#fff"/><circle cx="472.06" cy="371.699" r="5" fill="#fff"/><circle cx="504.06" cy="313.699" r="5" fill="#fff"/><circle cx="468.06" cy="331.699" r="5" fill="#fff"/><circle cx="531.06" cy="385.699" r="5" fill="#fff"/><circle cx="549.06" cy="286.699" r="5" fill="#fff"/><path fill="#3f3d56" d="M611.587 467.699v-2a93.272 93.272 0 0 0 0-186.544v-2a95.272 95.272 0 0 1 0 190.544Z"/><path fill="#3f3d56" d="M612.06 449.699h-1v-2.522h2v.515a71.472 71.472 0 0 0-1-142.938v-2a73.472 73.472 0 0 1 0 146.945Z"/><path fill="#f9a826" d="m54.674 306.831-34.067-43.8a26.919 26.919 0 0 1 4.722-37.778L163.314 117.93a51.741 51.741 0 0 1 27.837-10.774l11.72-.907 108.035-63.28 29.044 37.343-88.417 88.417a51.53 51.53 0 0 1-19.603 34.34L92.452 311.553a26.919 26.919 0 0 1-37.778-4.722Z"/><path fill="#f0f0f0" d="M375.89 50.376c3.315.93 7.572-.003 11.14-2.779 5.231-4.069 6.998-10.548 3.947-14.471a6.946 6.946 0 0 0-2.028-1.755 8.042 8.042 0 0 0-1.13-7.191 6.871 6.871 0 0 0-1.379-1.33c3.44-4.763 4.731-9.02 2.958-11.3a5.043 5.043 0 0 0-4.085-1.621 7.554 7.554 0 0 0-1.44-5.483c-2.577-3.313-7.765-3.733-12.467-1.337-.056-.08-.103-.164-.163-.242-3.052-3.923-9.766-3.805-14.998.263a13.94 13.94 0 0 0-5.225 7.942 13.94 13.94 0 0 0-8.983 3.11c-5.232 4.068-6.999 10.547-3.947 14.47.135.174.285.33.434.487l-.062.065c-.118-.187-.234-.374-.372-.551-3.052-3.924-9.766-3.806-14.998.263a13.94 13.94 0 0 0-5.224 7.942 13.94 13.94 0 0 0-8.984 3.109c-5.231 4.069-6.998 10.548-3.947 14.471s9.767 3.806 14.998-.263a8.987 8.987 0 0 0 1.669 15.228c-1.106 2.66-1.215 4.902-.09 6.348 1.773 2.28 6.217 2.077 11.68-.085a6.87 6.87 0 0 0 .95 1.664c3.051 3.923 9.766 3.805 14.997-.264a13.942 13.942 0 0 0 5.225-7.94 13.942 13.942 0 0 0 8.983-3.11 15.494 15.494 0 0 0 3.147-3.284 15.494 15.494 0 0 0 3.958-2.242c3.568-2.775 5.52-6.671 5.435-10.114Z"/><path fill="#3f3d56" d="M46.304 319.075 6.68 268.13a31.728 31.728 0 0 1 5.566-44.527l160.49-124.826a60.595 60.595 0 0 1 32.602-12.618l13.536-1.048 116.554-68.269A9.996 9.996 0 0 1 352.406 6.54l33.153 42.625a9.997 9.997 0 0 1-14.218 13.879l-95.343 95.342a60.348 60.348 0 0 1-22.94 40.077L90.83 324.64a31.728 31.728 0 0 1-44.526-5.565ZM350.827 7.768a7.996 7.996 0 0 0-13.211 8.95l.507.863L219.488 87.07l-13.995 1.084a58.602 58.602 0 0 0-31.529 12.202L13.474 225.182a29.728 29.728 0 0 0-5.215 41.72l39.623 50.945a29.728 29.728 0 0 0 41.72 5.215L251.83 196.884a58.365 58.365 0 0 0 22.228-39.087l.042-.34 97.207-97.208.707.709a7.997 7.997 0 0 0 11.966-10.565Z"/><path fill="#3f3d56" d="m80.562 171.734 56.834-44.203 77.356 99.458-56.833 44.204z"/><path fill="#3f3d56" d="m81.965 171.91 76.13 97.88 55.254-42.976-76.129-97.88Z"/><circle cx="304.148" cy="77.856" r="5" fill="#fff"/><circle cx="264.68" cy="85.75" r="5" fill="#fff"/><circle cx="267.049" cy="118.113" r="5" fill="#fff"/><circle cx="227.581" cy="126.007" r="5" fill="#fff"/><circle cx="433.06" cy="66.699" r="5" fill="#fff"/><circle cx="451.06" cy="93.699" r="5" fill="#fff"/><circle cx="451.06" cy="138.699" r="5" fill="#fff"/><path fill="#f2f2f2" d="M379.853 173.478zM378.153 173.509c-5.531.173-23.247 1.333-32.45 9.064-10.996 9.235-10.997 18.005-5.668 24.349s13.966 7.858 24.962-1.377c9.32-7.829 13.513-25.42 14.574-30.6ZM519.263 60.981zM520.326 62.307c3.52 4.271 15.27 17.58 27.016 20.135 14.03 3.053 20.97-2.31 22.732-10.405s-2.323-15.856-16.354-18.909c-11.893-2.588-28.377 4.852-33.125 7.18ZM610.106 191.619zM610.284 193.31c.65 5.496 3.335 23.046 11.832 31.547 10.15 10.157 18.887 9.4 24.747 3.544s6.623-14.592-3.527-24.75c-8.604-8.61-26.492-11.267-31.745-11.877Z"/><path fill="#3f3d56" d="M813.69 549.938a1.195 1.195 0 0 1-1.2 1.19H165.2a1.19 1.19 0 0 1 0-2.38h647.29a1.195 1.195 0 0 1 1.2 1.19Z"/></svg>
+    <h2 class="gradient-text text-center font-extrabold tracking-tight text-6xl">
+      Make taste fun
+    </h2>
+  </div>
+  <p class="max-w-xl text-center font-extrabold text-2xl">
+    
+    We think that the experience of
+    <span class="text-primary">taste</span> and
+    <span class="text-primary">atmosphere</span>
+    is closely linked. 
+    <span class="text-primary">Fun</span> evenings makes for fun taste.
+  
+  </p>
+  
+  
+  
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+
+<a class="inline-block h-16" href=""><img class="p-2.5 h-16" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&releaseDate=1669593600?h=626b1333341609700e14944b609ea886" alt="Download on the App Store"></a>
+
+<a class="inline-block" href="https://play.google.com/store/apps/details?id=com.codemos.slurp"><img alt="Get it on Google Play" class="h-16" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"></a>
+  </div>
+
+</section>
+      <section id="features" class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8">
+  <div class="flex flex-col items-center gap-4">
+    
+    <h2 class="gradient-text text-center font-extrabold tracking-tight text-6xl">
+      Features
+    </h2>
+  </div>
+  <p class="max-w-xl text-center font-extrabold text-2xl">
+    
+    Slurp comes <span class="text-primary">packed with</span> potential for memories with friends and family. It takes
+    the best parts of 
+    <span class="text-primary">beertasting</span> and 
+     adds its own <span class="text-primary">innovations</span>.
+  
+  </p>
+  
+  
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <svg viewBox="0 0 24 24" astro-icon="mdi:handshake"><path fill="currentColor" d="M11 6h3l3.29-3.3a1 1 0 0 1 1.42 0l2.58 2.59a1 1 0 0 1 0 1.41L19 9h-8v2a1 1 0 0 1-1 1 1 1 0 0 1-1-1V8a2 2 0 0 1 2-2m-6 5v4l-2.29 2.29a1 1 0 0 0 0 1.41l2.58 2.59a1 1 0 0 0 1.42 0L11 17h4a1 1 0 0 0 1-1v-1h1a1 1 0 0 0 1-1v-1h1a1 1 0 0 0 1-1v-1h-7v1a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9z"/></svg>
+          </div>
+          <p class="text-center font-extrabold text-xl">Compose your own tastesession</p>
+          <p class="text-center text-offset text-sm">You decide the theme for your session. Choose what beers you are tasting, and what parameters you are messuring by.</p>
+        </li><li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <svg viewBox="0 0 24 24" astro-icon="mdi:feather"><path fill="currentColor" d="M22 2s-7.64-.37-13.66 7.88C3.72 16.21 2 22 2 22l1.94-1c1.44-2.5 2.19-3.53 3.6-5 2.53.74 5.17.65 7.46-2-2-.56-3.6-.43-5.96-.19C11.69 12 13.5 11.6 16 12l1-2c-1.8-.34-3-.37-4.78.04C14.19 8.65 15.56 7.87 18 8l1.21-1.93c-1.56-.11-2.5.06-4.29.5 1.61-1.46 3.08-2.12 5.22-2.25 0 0 1.05-1.89 1.86-2.32z"/></svg>
+          </div>
+          <p class="text-center font-extrabold text-xl">Fits for every party</p>
+          <p class="text-center text-offset text-sm">After the session is made, you can invite as many as you like by sharing the pin. There&#39;s no limit on how many tasters that can join you in your adventure.</p>
+        </li><li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <svg viewBox="0 0 24 24" astro-icon="mdi:directions-fork"><path fill="currentColor" d="M3 4v8.5l3-3L9 13c1 1 1 2 1 2v6h4v-7s0-1-.53-2S12 10 12 10L9 6.58 11.5 4M18 4l-4.46 4.47L14 9s.93 1 1.47 2c.21.4.33.79.4 1.13L21 7"/></svg>
+          </div>
+          <p class="text-center font-extrabold text-xl">Scoring by FaceDice</p>
+          <p class="text-center text-offset text-sm">You will be scoring every beer by your own selected parameters, but in addition you get to score the beer with your face.</p>
+        </li><li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <svg viewBox="0 0 24 24" astro-icon="mdi:graph"><path fill="currentColor" d="M19.5 17c-.13 0-.26 0-.39.04l-1.61-3.25a2.5 2.5 0 0 0-1.75-4.29c-.13 0-.25 0-.39.04l-1.63-3.25c.48-.45.77-1.08.77-1.79a2.5 2.5 0 0 0-5 0c0 .71.29 1.34.76 1.79L8.64 9.54c-.14-.04-.26-.04-.39-.04a2.5 2.5 0 0 0-1.75 4.29l-1.61 3.25C4.76 17 4.63 17 4.5 17a2.5 2.5 0 0 0 0 5A2.5 2.5 0 0 0 7 19.5c0-.7-.29-1.34-.76-1.79l1.62-3.25c.14.04.26.04.39.04s.25 0 .39-.04l1.63 3.25c-.47.45-.77 1.09-.77 1.79a2.5 2.5 0 0 0 5 0A2.5 2.5 0 0 0 12 17c-.13 0-.26 0-.39.04L10 13.79c.46-.45.75-1.08.75-1.79s-.29-1.34-.75-1.79l1.61-3.25c.13.04.26.04.39.04s.26 0 .39-.04L14 10.21c-.45.45-.75 1.09-.75 1.79a2.5 2.5 0 0 0 2.5 2.5c.13 0 .25 0 .39-.04l1.63 3.25c-.47.45-.77 1.09-.77 1.79a2.5 2.5 0 0 0 5 0 2.5 2.5 0 0 0-2.5-2.5z"/></svg>
+          </div>
+          <p class="text-center font-extrabold text-xl">Find the favourite</p>
+          <p class="text-center text-offset text-sm">When the session is done you get a highscore of all beers tasted.</p>
+        </li><li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <svg viewBox="0 0 24 24" astro-icon="mdi:search-web"><path fill="currentColor" d="m15.5 14 5 5-1.5 1.5-5-5v-.79l-.27-.28A6.471 6.471 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3 6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.57 4.23l.28.27h.79m-6-9.5-.55.03c-.24.52-.61 1.4-.88 2.47h2.86c-.27-1.07-.64-1.95-.88-2.47-.18-.03-.36-.03-.55-.03M13.83 7a4.943 4.943 0 0 0-2.68-2.22c.24.53.55 1.3.78 2.22h1.9M5.17 7h1.9c.23-.92.54-1.69.78-2.22A4.943 4.943 0 0 0 5.17 7M4.5 9.5c0 .5.08 1.03.23 1.5h2.14l-.12-1.5.12-1.5H4.73c-.15.47-.23 1-.23 1.5m9.77 1.5c.15-.47.23-1 .23-1.5s-.08-1.03-.23-1.5h-2.14a9.48 9.48 0 0 1 0 3h2.14m-6.4-3-.12 1.5.12 1.5h3.26a9.48 9.48 0 0 0 0-3H7.87m1.63 6.5c.18 0 .36 0 .53-.03.25-.52.63-1.4.9-2.47H8.07c.27 1.07.65 1.95.9 2.47l.53.03m4.33-2.5h-1.9c-.23.92-.54 1.69-.78 2.22A4.943 4.943 0 0 0 13.83 12m-8.66 0a4.943 4.943 0 0 0 2.68 2.22c-.24-.53-.55-1.3-.78-2.22h-1.9z"/></svg>
+          </div>
+          <p class="text-center font-extrabold text-xl">Collage of taste</p>
+          <p class="text-center text-offset text-sm">You get a collage of all the FaceDice&#39;s from the best and worst beer in the tastesession.</p>
+        </li><li class="flex flex-col items-center gap-4 border border-default bg-offset p-6">
+          <div class="h-16 w-16 rounded-full border-2 border-current p-3">
+            <svg viewBox="0 0 24 24" astro-icon="mdi:account-group"><path fill="currentColor" d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.536 5.536 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13v-1.75M0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20H0m24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9V20z"/></svg>
+          </div>
+          <p class="text-center font-extrabold text-xl">More features coming</p>
+          <p class="text-center text-offset text-sm">There will be many more exciting features coming soon.</p>
+        </li>
+  </ul>
+
+</section>
+      <section id="getintouch" class="flex scroll-mt-24 flex-col items-center gap-4 space-y-8">
+  <div class="flex flex-col items-center gap-4">
+    
+    <h2 class="gradient-text text-center font-extrabold tracking-tight text-6xl">
+      Get in touch
+    </h2>
+  </div>
+  <p class="max-w-xl text-center font-extrabold text-2xl">
+    
+    If you experience <span class="text-primary">issues</span> don't hesitate to contact us.
+    <span class="text-primary">We</span>
+    appreciate feedback so we can <span class="text-primary">improve</span> our app.
+  
+  </p>
+  
+  
+  <div class="w-full max-w-6xl space-y-2">
+  <div class="relative border border-default bg-offset px-6 pb-4 pt-8">
+    <h3 class="absolute left-4 top-0 -translate-y-1/2 rounded-full border border-current bg-default px-4 py-1 uppercase tracking-tight text-xs">
+      Contact info
+    </h3>
+
+
+        <h2>Mail</h2>
+        <p class="text-sm">post@slurpapp.no <br><br></p>
+        <h2>Phone</h2>
+        <p class="text-sm">0047 99 42 31 72 <br><br></p>
+
+  </div>
+
+</div>
+
+</section>
+    </div>
+<!--   <Footer /> -->
+  </body></html>
