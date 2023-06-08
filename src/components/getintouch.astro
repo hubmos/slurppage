@@ -1,0 +1,17 @@
+---
+import ContactInfo from "~/components/contactinfo.astro";
+import ContentSection from "~/components/content-section.astro";
+
+
+---
+
+<ContentSection title="Get in touch" id="getintouch">
+  <Fragment slot="lead">
+    If you experience <span class="text-primary">issues</span> don't hesitate to contact us.
+    <span class="text-primary">We</span>
+    appreciate feedback so we can <span class="text-primary">improve</span> our app.
+  </Fragment>
+  <ContactInfo
+  />
+</ContentSection>
+
