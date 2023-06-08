@@ -1,8 +1,3 @@
-export interface CompatibilityItem {
-  icon: string;
-  title: string;
-  url: string;
-}
 
 export interface FeatureItem {
   description: string;
@@ -21,8 +16,3 @@ export interface NavItem {
   url: string;
 }
 
-export interface ShowcaseSite {
-  title: string;
-  image: ImageMetadata;
-  url: string;
-}
